@@ -1,12 +1,24 @@
 import type { Watch, WatchImage } from "./types";
 import { tissotGallery } from "./tissot-gallery";
+import { armaniGallery } from "./armani-gallery";
+
+type GallerySourceItem = {
+  src: string;
+  thumb: string;
+  alt: string;
+  group: string;
+};
 
 /**
- * Builds a product photo set from the in-store Tissot photo library.
+ * Builds a product photo set from a brand's in-store photo library.
  * `preferred` is a filename fragment that should appear first.
  */
-function galleryImages(group: string, preferred?: string): WatchImage[] {
-  const items = tissotGallery.filter((item) => item.group === group);
+function imagesFrom(
+  source: GallerySourceItem[],
+  group: string,
+  preferred?: string,
+): WatchImage[] {
+  const items = source.filter((item) => item.group === group);
   const images = items.map((item) => ({
     src: item.src,
     thumb: item.thumb,
@@ -21,6 +33,14 @@ function galleryImages(group: string, preferred?: string): WatchImage[] {
   }
 
   return images;
+}
+
+function galleryImages(group: string, preferred?: string): WatchImage[] {
+  return imagesFrom(tissotGallery, group, preferred);
+}
+
+function armaniImages(group: string, preferred?: string): WatchImage[] {
+  return imagesFrom(armaniGallery, group, preferred);
 }
 
 export const watches: Watch[] = [
@@ -1372,6 +1392,80 @@ export const watches: Watch[] = [
       "Water-resistant to 30 metres",
     ],
     images: galleryImages("Tradition Chronograph"),
+  },
+
+  {
+    slug: "armani-exchange-chronograph",
+    name: "Sport Chronograph",
+    brand: "armani-exchange",
+    collection: "Chronograph",
+    price: 0,
+    priceOnRequest: true,
+    gender: "Men",
+    movement: "Quartz",
+    caseSize: 44,
+    caseMaterial: "Stainless steel",
+    caseTone: "steel",
+    dialName: "Black",
+    dialHex: "#191b1e",
+    dialTexture: "matte",
+    chrono: true,
+    strapName: "Steel bracelet",
+    strapType: "Steel",
+    strapHex: "#b9c0c7",
+    bezel: "smooth",
+    waterResistance: "50 m",
+    glass: "Mineral crystal",
+    year: 2025,
+    condition: "New",
+    rating: 0,
+    reviewCount: 0,
+    stock: 1,
+    description:
+      "A confident, octagonal chronograph with three sub-dials and a date window at four o'clock. The AX finish is unmistakable: brushed steel, a bold A|X signature on the dial, and a bracelet that tapers cleanly into the case. Five finishes are photographed here, from all-black to green and gold two-tone.",
+    features: [
+      "Quartz chronograph with three sub-dials",
+      "Octagonal brushed steel case",
+      "Date window and luminous hands",
+      "Water-resistant to 50 metres",
+    ],
+    images: armaniImages("Chronograph", "black-dial-steel-bracelet"),
+  },
+  {
+    slug: "armani-exchange-slim-leather",
+    name: "Slim Leather",
+    brand: "armani-exchange",
+    collection: "Dress",
+    price: 0,
+    priceOnRequest: true,
+    gender: "Unisex",
+    movement: "Quartz",
+    caseSize: 40,
+    caseMaterial: "Stainless steel",
+    caseTone: "steel",
+    dialName: "Black",
+    dialHex: "#191b1e",
+    dialTexture: "sunburst",
+    strapName: "Leather",
+    strapType: "Leather",
+    strapHex: "#1e2023",
+    bezel: "smooth",
+    waterResistance: "30 m",
+    glass: "Mineral crystal",
+    year: 2025,
+    condition: "New",
+    rating: 0,
+    reviewCount: 0,
+    stock: 1,
+    description:
+      "The quieter side of A|X. A slim round case, clean baton markers and a soft leather strap — an easy, everyday dress watch in black, blue or brown. Each colourway is photographed exactly as it arrives in the boutique box.",
+    features: [
+      "Slim quartz three-hand movement",
+      "Round stainless steel case",
+      "Genuine leather strap",
+      "Water-resistant to 30 metres",
+    ],
+    images: armaniImages("Slim Leather", "black-dial-black-leather"),
   },
 
   {

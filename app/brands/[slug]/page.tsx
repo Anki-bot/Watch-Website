@@ -5,9 +5,9 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { brands, getBrand } from "@/lib/brands";
 import { getBrandWatches } from "@/lib/watches";
 import { ProductCard } from "@/components/product-card";
-import { TissotGallery } from "@/components/tissot-gallery";
+import { PhotoGallery } from "@/components/photo-gallery";
 import { WatchThumb } from "@/components/watch-thumb";
-import { tissotGallery } from "@/lib/tissot-gallery";
+import { brandGalleries } from "@/lib/brand-galleries";
 
 type BrandPageProps = {
   params: Promise<{ slug: string }>;
@@ -42,6 +42,7 @@ export default async function BrandPage({ params }: BrandPageProps) {
 
   const brandWatches = getBrandWatches(brand.slug);
   const flagship = brandWatches[0];
+  const gallery = brandGalleries[brand.slug];
   const others = brands.filter((item) => item.slug !== brand.slug).slice(0, 6);
 
   return (
@@ -150,12 +151,12 @@ export default async function BrandPage({ params }: BrandPageProps) {
             </h2>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            {brand.slug === "tissot" && (
+            {gallery && (
               <Link
-                href="#tissot-photos"
+                href="#brand-photos"
                 className="group inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-stone transition-colors hover:text-gold"
               >
-                All {tissotGallery.length} photos
+                All {gallery.length} photos
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
               </Link>
             )}
@@ -176,9 +177,9 @@ export default async function BrandPage({ params }: BrandPageProps) {
         </div>
       </section>
 
-      {brand.slug === "tissot" && (
+      {gallery && (
         <section
-          id="tissot-photos"
+          id="brand-photos"
           className="scroll-mt-20 border-t border-line bg-cream/40"
         >
           <div className="shell py-14 lg:py-20">
@@ -186,18 +187,18 @@ export default async function BrandPage({ params }: BrandPageProps) {
               <div>
                 <p className="eyebrow text-gold">The full collection</p>
                 <h2 className="mt-2 font-display text-3xl sm:text-4xl">
-                  Every Tissot in store
+                  Every {brand.name} in store
                 </h2>
               </div>
               <p className="max-w-sm text-[11px] leading-relaxed text-stone">
-                {tissotGallery.length} photographs from the boutique. Some pieces are
+                {gallery.length} photographs from the boutique. Some pieces are
                 one-off or not yet listed online — tap any photo to view it full size,
                 or ask the concierge about availability.
               </p>
             </div>
 
             <div className="mt-8">
-              <TissotGallery items={tissotGallery} />
+              <PhotoGallery items={gallery} />
             </div>
           </div>
         </section>

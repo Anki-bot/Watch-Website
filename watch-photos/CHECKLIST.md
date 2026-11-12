@@ -11,6 +11,19 @@ and tell me — I'll match it for you.
 
 ---
 
+## Armani Exchange
+
+Brand folder: `incoming/A-X/`
+
+- [x] **Sport Chronograph** — Men · price on request
+  `incoming/A-X/6213.jpg.jpeg`, `6215.jpg.jpeg`, `6217.jpg.jpeg`,
+  `15592.jpg.jpeg`, `21581.jpg.jpeg`
+- [x] **Slim Leather** — Unisex · price on request
+  `incoming/A-X/10861.jpg.jpeg`, `10864.jpg.jpeg`, `10600.jpg.jpeg`
+
+All 8 photos are live in the site's photo library and both model families are
+products in the catalog. Sources are untouched in `incoming/A-X/`.
+
 ## Breitling
 
 Brand folder: `incoming/breitling/`
@@ -176,8 +189,9 @@ Brand folder: `incoming/tissot/`
 
 Tissot photos have been sorted separately — see
 `incoming/tissot/README.md`. There are 82 photos across 14 model folders.
-`PRX Powermatic 80` is matched; `Le Locle Powermatic 80` and `Seastar 1000`
-still have no photos.
+All 80 usable photos are live in the site's photo library, and each model
+family with photos is now a product in the catalog.
+`Le Locle Powermatic 80` and `Seastar 1000` still have no photos.
 
 ## Tudor
 

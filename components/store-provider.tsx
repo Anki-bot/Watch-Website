@@ -112,7 +112,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const addToCart = useCallback((slug: string, qty = 1) => {
     const watch = getWatch(slug);
-    if (!watch || watch.stock <= 0) return;
+    if (!watch || watch.stock <= 0 || watch.priceOnRequest) return;
     setCart((current) => {
       const existing = current.find((line) => line.slug === slug);
       if (existing) {

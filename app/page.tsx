@@ -89,6 +89,8 @@ export default function HomePage() {
     "tudor",
     "tag-heuer",
     "longines",
+    "tissot",
+    "armani-exchange",
   ]
     .map((slug) => brands.find((brand) => brand.slug === slug))
     .filter((brand): brand is NonNullable<typeof brand> => Boolean(brand));
@@ -385,7 +387,7 @@ export default function HomePage() {
             title="Maisons of distinction"
             description="From Geneva to Shizukuishi, we work with houses that have shaped how the world keeps time."
             href="/brands"
-            linkLabel="All 14 maisons"
+            linkLabel={`All ${brands.length} maisons`}
           />
           <div className="mt-10 grid gap-x-10 sm:grid-cols-2">
             {homeBrands.map((brand, index) => {

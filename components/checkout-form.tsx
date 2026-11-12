@@ -514,7 +514,8 @@ export function CheckoutForm() {
                         {watch.name}
                       </p>
                       <p className="mt-0.5 text-[10px] text-stone">
-                        {watch.caseSize} mm · {watch.reference}
+                        {watch.caseSize} mm
+                        {watch.reference ? ` · ${watch.reference}` : ""}
                       </p>
                     </div>
                     <p className="text-xs font-medium">{formatPrice(watch.price * qty)}</p>

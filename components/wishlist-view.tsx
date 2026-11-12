@@ -30,7 +30,7 @@ export function WishlistView() {
               type="button"
               onClick={() => {
                 wishlistItems
-                  .filter((watch) => watch.stock > 0)
+                  .filter((watch) => watch.stock > 0 && !watch.priceOnRequest)
                   .forEach((watch) => addToCart(watch.slug));
                 wishlist.forEach((slug) => toggleWishlist(slug));
               }}

@@ -4,13 +4,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import type { TissotGalleryItem } from "@/lib/tissot-gallery";
+import type { GalleryItem } from "@/lib/gallery";
 
-type TissotGalleryProps = {
-  items: TissotGalleryItem[];
+type PhotoGalleryProps = {
+  items: GalleryItem[];
 };
 
-export function TissotGallery({ items }: TissotGalleryProps) {
+export function PhotoGallery({ items }: PhotoGalleryProps) {
   const [active, setActive] = useState<number | null>(null);
 
   const close = useCallback(() => setActive(null), []);

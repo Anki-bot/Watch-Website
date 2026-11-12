@@ -141,6 +141,16 @@ export const brands: Brand[] = [
       "IWC approaches watchmaking like engineering: clean dials, purposeful complications and a restrained, industrial elegance that has defined the Portugieser and Pilot families.",
     accent: "#3b3f46",
   },
+  {
+    slug: "armani-exchange",
+    name: "Armani Exchange",
+    country: "Italy",
+    founded: 1991,
+    tagline: "Milanese style, everyday attitude",
+    description:
+      "Armani Exchange distils the Armani aesthetic into accessible, urban watches. Graphic chronographs, slim leather pieces and confident steel cases — designed in Milan, worn everywhere.",
+    accent: "#1b1b1b",
+  },
 ];
 
 export function getBrand(slug: string): Brand | undefined {

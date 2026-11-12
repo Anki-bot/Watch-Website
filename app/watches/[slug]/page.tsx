@@ -50,7 +50,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const brand = getBrand(watch.brand);
   const related = getRelatedWatches(watch, 4);
   const specs: [string, string][] = [
-    ["Reference", watch.reference],
     ["Collection", watch.collection],
     ["Movement", watch.movement],
     ["Case size", `${watch.caseSize} mm`],
@@ -63,15 +62,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ["Year", String(watch.year)],
     ["Warranty", "24 months"],
   ];
+  if (watch.reference) specs.unshift(["Reference", watch.reference]);
 
-  const jsonLd = {
+  const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: `${brand?.name ?? watch.brand} ${watch.name}`,
     brand: { "@type": "Brand", name: brand?.name ?? watch.brand },
     description: watch.description,
-    sku: watch.reference,
-    offers: {
+    sku: watch.reference ?? watch.slug,
+  };
+
+  if (!watch.priceOnRequest && watch.price > 0) {
+    jsonLd.offers = {
       "@type": "Offer",
       priceCurrency: "USD",
       price: watch.price,
@@ -79,13 +82,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
         watch.stock > 0
           ? "https://schema.org/InStock"
           : "https://schema.org/OutOfStock",
-    },
-    aggregateRating: {
+    };
+  }
+
+  if (watch.reviewCount > 0) {
+    jsonLd.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: watch.rating,
       reviewCount: watch.reviewCount,
-    },
-  };
+    };
+  }
 
   return (
     <>
@@ -135,7 +141,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   {watch.name}
                 </h1>
                 <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-stone">
-                  {watch.collection} · Ref. {watch.reference} · {watch.year}
+                  {watch.collection}
+                  {watch.reference ? ` · Ref. ${watch.reference}` : ""} · {watch.year}
                 </p>
               </div>
               {watch.badges?.[0] && (
@@ -146,8 +153,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-4">
-              <Rating rating={watch.rating} count={watch.reviewCount} />
-              <span className="h-3 w-px bg-line" />
+              {watch.reviewCount > 0 && (
+                <>
+                  <Rating rating={watch.rating} count={watch.reviewCount} />
+                  <span className="h-3 w-px bg-line" />
+                </>
+              )}
               <span className="text-[11px] text-stone">
                 {watch.condition} condition · Inspected by our watchmakers
               </span>

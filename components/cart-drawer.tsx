@@ -95,7 +95,8 @@ export function CartDrawer() {
                             {watch.name}
                           </Link>
                           <p className="mt-1 text-[11px] text-stone">
-                            {watch.reference} · {watch.caseSize} mm
+                            {watch.reference ? `Ref. ${watch.reference} · ` : ""}
+                            {watch.caseSize} mm
                           </p>
                         </div>
                         <button

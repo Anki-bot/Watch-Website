@@ -45,9 +45,11 @@ function PhotoGallery({ watch, brandName }: ProductGalleryProps) {
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="object-cover"
           />
-          <span className="absolute left-4 top-4 border border-ink/10 bg-cream/85 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur">
-            Ref. {watch.reference}
-          </span>
+          {watch.reference && (
+            <span className="absolute left-4 top-4 border border-ink/10 bg-cream/85 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-ink backdrop-blur">
+              Ref. {watch.reference}
+            </span>
+          )}
           <span className="pointer-events-none absolute bottom-4 right-4 flex items-center gap-1.5 border border-ink/10 bg-cream/85 px-2 py-1 text-[9px] uppercase tracking-[0.16em] text-ink/70 backdrop-blur">
             <Expand className="h-3 w-3" strokeWidth={1.5} />
             {brandName}
@@ -77,10 +79,11 @@ function PhotoGallery({ watch, brandName }: ProductGalleryProps) {
               aria-pressed={index === active}
             >
               <Image
-                src={item.src}
+                src={item.thumb ?? item.src}
                 alt={item.alt}
                 fill
                 sizes="25vw"
+                loading="lazy"
                 className="object-cover"
               />
             </button>

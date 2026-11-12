@@ -117,7 +117,8 @@ export function CartView() {
                         {watch.name}
                       </Link>
                       <p className="mt-1.5 text-[11px] text-stone">
-                        Ref. {watch.reference} · {watch.movement} · {watch.caseSize} mm
+                        {watch.reference ? `Ref. ${watch.reference} · ` : ""}
+                        {watch.movement} · {watch.caseSize} mm
                       </p>
                       <p className="mt-1 text-[11px] text-stone">
                         {watch.dialName} dial · {watch.strapName}

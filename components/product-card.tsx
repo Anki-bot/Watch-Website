@@ -61,7 +61,11 @@ export function ProductCard({ watch }: { watch: Watch }) {
           iconClassName="h-4 w-4"
         />
 
-        {soldOut ? (
+        {enquire ? (
+          <div className="pointer-events-none absolute inset-x-3 bottom-3 flex items-center justify-center bg-ink/85 py-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-ivory backdrop-blur">
+            Enquire in store
+          </div>
+        ) : soldOut ? (
           <div className="pointer-events-none absolute inset-x-3 bottom-3 flex items-center justify-center bg-ink/85 py-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-ivory backdrop-blur">
             Sold out
           </div>
@@ -104,8 +108,10 @@ export function ProductCard({ watch }: { watch: Watch }) {
           {watch.movement} · {watch.caseSize} mm · {watch.gender}
         </p>
         <div className="mt-auto flex items-baseline gap-2 pt-3">
-          <span className="text-sm font-medium tracking-wide">{formatPrice(watch.price)}</span>
-          {watch.compareAtPrice && (
+          <span className="text-sm font-medium tracking-wide">
+            {enquire ? "Price on request" : formatPrice(watch.price)}
+          </span>
+          {!enquire && watch.compareAtPrice && (
             <span className="text-xs text-stone line-through">
               {formatPrice(watch.compareAtPrice)}
             </span>

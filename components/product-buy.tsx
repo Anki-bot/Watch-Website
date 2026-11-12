@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Minus, Plus, ShoppingBag, ShieldCheck, Truck, RotateCcw } from "lucide-react";
+import { Minus, Plus, ShoppingBag, ShieldCheck, Truck, RotateCcw, Mail } from "lucide-react";
 import type { Watch } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
 import { useStore } from "./store-provider";
@@ -15,6 +15,63 @@ export function ProductBuy({ watch }: { watch: Watch }) {
   const lowStock = watch.stock > 0 && watch.stock <= 3;
   const savings = watch.compareAtPrice ? watch.compareAtPrice - watch.price : 0;
   const installments = Math.round((watch.price / 4) * 100) / 100;
+
+  if (watch.priceOnRequest) {
+    return (
+      <div>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span className="font-display text-3xl">Price on request</span>
+        </div>
+        <p className="mt-1.5 text-[11px] leading-relaxed text-stone">
+          Photographed in our boutique. Speak with the concierge for pricing,
+          the exact reference and current availability.
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px]">
+          <span className="flex items-center gap-1.5 text-[#3c6b4a]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#4d7d5a]" />
+            In store · available to view
+          </span>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-2.5 sm:flex-row">
+          <Link
+            href="/info/contact"
+            className="flex h-[52px] flex-1 items-center justify-center gap-2.5 bg-ink px-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-graphite"
+          >
+            <Mail className="h-4 w-4" strokeWidth={1.5} />
+            Enquire about this piece
+          </Link>
+
+          <WishlistButton
+            slug={watch.slug}
+            withLabel
+            className="h-[52px] border border-line bg-ivory px-5 text-ink hover:border-ink/40 sm:w-auto"
+          />
+        </div>
+
+        <p className="mt-3 text-[11px] leading-relaxed text-stone">
+          Specifications shown are indicative — our team will confirm the exact
+          reference and case size before any purchase.
+        </p>
+
+        <div className="mt-6 grid gap-2.5 border-y border-line py-5 text-[11px] text-stone sm:grid-cols-3">
+          <span className="flex items-center gap-2">
+            <Truck className="h-4 w-4 text-gold" strokeWidth={1.5} />
+            Free insured delivery
+          </span>
+          <span className="flex items-center gap-2">
+            <RotateCcw className="h-4 w-4 text-gold" strokeWidth={1.5} />
+            14-day returns
+          </span>
+          <span className="flex items-center gap-2">
+            <ShieldCheck className="h-4 w-4 text-gold" strokeWidth={1.5} />
+            24-month warranty
+          </span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>

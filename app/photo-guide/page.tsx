@@ -95,7 +95,8 @@ export default function PhotoGuidePage() {
                     </p>
                     <h3 className="mt-1 font-display text-xl leading-tight">{watch.name}</h3>
                     <p className="mt-1 text-[11px] text-stone">
-                      {watch.gender} · {watch.caseSize} mm · Ref. {watch.reference}
+                      {watch.gender} · {watch.caseSize} mm
+                      {watch.reference ? ` · Ref. ${watch.reference}` : ""}
                     </p>
                     <p className="mt-3 border border-line bg-cream/60 px-2.5 py-2 text-[10px] leading-relaxed text-ink/80">
                       <span className="block text-[9px] uppercase tracking-[0.14em] text-stone">
