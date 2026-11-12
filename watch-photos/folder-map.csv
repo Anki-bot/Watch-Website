@@ -1,0 +1,47 @@
+brand,brand_slug,watch_name,folder,watch_slug,reference,gender
+Rolex,rolex,Submariner Date 41,Submariner Date 41,rolex-submariner-date-41,126610LV,Men
+Rolex,rolex,Datejust 36 Wimbledon,Datejust 36 Wimbledon,rolex-datejust-36-wimbledon,126234,Unisex
+Rolex,rolex,"GMT-Master II ""Batgirl""",GMT-Master II Batgirl,rolex-gmt-master-ii-batgirl,126710BLNR,Men
+Rolex,rolex,Cosmograph Daytona,Cosmograph Daytona,rolex-daytona-panda,126500LN,Unisex
+Rolex,rolex,Day-Date 40 President,Day-Date 40 President,rolex-day-date-40-president,228238,Men
+Omega,omega,Speedmaster Moonwatch Professional,Speedmaster Moonwatch Professional,omega-speedmaster-moonwatch,310.30.42.50.01.001,Men
+Omega,omega,Seamaster Diver 300M,Seamaster Diver 300M,omega-seamaster-diver-300m,210.30.42.20.03.001,Men
+Omega,omega,Constellation 28,Constellation 28,omega-constellation-28,131.20.28.60.05.001,Women
+Omega,omega,De Ville Prestige 39.5,De Ville Prestige 39.5,omega-de-ville-prestige,434.13.40.20.02.001,Unisex
+Seiko,seiko,Prospex Speedtimer Solar Chronograph,Prospex Speedtimer Solar Chronograph,seiko-prospex-speedtimer,SSC813P1,Men
+Seiko,seiko,"Presage Cocktail Time ""Blue Moon""",Presage Cocktail Time Blue Moon,seiko-presage-cocktail-time,SRPB41J1,Men
+Seiko,seiko,Seiko 5 Sports Field,Seiko 5 Sports Field,seiko-5-sports-field,SRPE05K1,Men
+Seiko,seiko,King Seiko SJE089,King Seiko SJE089,seiko-king-seiko-sje089,SJE089J1,Unisex
+TAG Heuer,tag-heuer,Carrera Chronograph 39,Carrera Chronograph 39,tag-heuer-carrera-chronograph-39,CBS2210.FC6534,Men
+TAG Heuer,tag-heuer,Aquaracer Professional 200,Aquaracer Professional 200,tag-heuer-aquaracer-200,WBP2110.BA0627,Men
+TAG Heuer,tag-heuer,Carrera Date 36,Carrera Date 36,tag-heuer-carrera-date-36,WBN2450.BD0569,Women
+Tudor,tudor,Black Bay 58,Black Bay 58,tudor-black-bay-58,M79030N-0001,Men
+Tudor,tudor,Pelagos 39,Pelagos 39,tudor-pelagos-39,M25407N-0001,Men
+Tudor,tudor,Royal 34,Royal 34,tudor-royal-34,M28400-0003,Women
+Longines,longines,Master Collection Moonphase,Master Collection Moonphase,longines-master-collection-moonphase,L2.919.4.78.3,Men
+Longines,longines,HydroConquest 41,HydroConquest 41,longines-hydroconquest-41,L3.781.4.96.6,Men
+Longines,longines,Conquest 34,Conquest 34,longines-conquest-34,L3.376.3.88.7,Women
+Tissot,tissot,PRX Powermatic 80,PRX Powermatic 80,tissot-prx-powermatic-80,T137.407.11.041.00,Unisex
+Tissot,tissot,Le Locle Powermatic 80,Le Locle Powermatic 80,tissot-le-locle-powermatic,T006.407.16.033.00,Men
+Tissot,tissot,Seastar 1000,Seastar 1000,tissot-seastar-1000,T120.807.17.051.00,Men
+Hamilton,hamilton,Khaki Field Mechanical,Khaki Field Mechanical,hamilton-khaki-field-mechanical,H69439931,Men
+Hamilton,hamilton,Jazzmaster Open Heart,Jazzmaster Open Heart,hamilton-jazzmaster-open-heart,H32705541,Unisex
+Hamilton,hamilton,Khaki Aviation Pilot Day Date,Khaki Aviation Pilot Day Date,hamilton-khaki-aviation-day-date,H64635560,Men
+Citizen,citizen,Promaster Eco-Drive Diver,Promaster Eco-Drive Diver,citizen-promaster-diver,BN0150-28E,Men
+Citizen,citizen,Attesa Eco-Drive,Attesa Eco-Drive,citizen-attesa-eco-drive,AT8185-62E,Men
+Citizen,citizen,Eco-Drive Silhouette,Eco-Drive Silhouette,citizen-silhouette,EM0680-50D,Women
+Grand Seiko,grand-seiko,Heritage Snowflake SBGA211,Heritage Snowflake SBGA211,grand-seiko-snowflake,SBGA211,Unisex
+Grand Seiko,grand-seiko,Heritage 'Birch' SLGH005,Heritage 'Birch' SLGH005,grand-seiko-birch,SLGH005,Men
+Grand Seiko,grand-seiko,Elegance 37,Elegance 37,grand-seiko-elegance-37,SBGX349,Women
+Cartier,cartier,Santos de Cartier Large,Santos de Cartier Large,cartier-santos-large,WSSA0018,Men
+Cartier,cartier,Ballon Bleu de Cartier 40,Ballon Bleu de Cartier 40,cartier-ballon-bleu-40,WSBB0040,Unisex
+Cartier,cartier,Tank Must Large,Tank Must Large,cartier-tank-must-large,WSTA0041,Unisex
+Casio,casio,"G-Shock GA-2100 ""CasiOak""",G-Shock GA-2100 CasiOak,casio-g-shock-ga-2100,GA-2100-1A1,Men
+Casio,casio,Edifice Chronograph,Edifice Chronograph,casio-edifice-chronograph,EFR-526D-2AV,Men
+Casio,casio,Sheen Solar,Sheen Solar,casio-sheen,SHE-4527D-7A,Women
+Breitling,breitling,Navitimer B01 Chronograph 43,Navitimer B01 Chronograph 43,breitling-navitimer-b01,AB0138241B1P1,Men
+Breitling,breitling,Superocean Heritage 42,Superocean Heritage 42,breitling-superocean-heritage-42,A17375211B1S1,Men
+Breitling,breitling,Chronomat 36,Chronomat 36,breitling-chronomat-36,U10380101A1U1,Women
+IWC Schaffhausen,iwc,Portugieser Chronograph,Portugieser Chronograph,iwc-portugieser-chronograph,IW371605,Men
+IWC Schaffhausen,iwc,Pilot's Watch Mark XX,Pilot's Watch Mark XX,iwc-pilot-mark-xx,IW328201,Men
+IWC Schaffhausen,iwc,Portofino 34,Portofino 34,iwc-portofino-34,IW357403,Women
