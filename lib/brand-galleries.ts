@@ -1,6 +1,7 @@
 import type { GalleryItem } from "./gallery";
 import { armaniGallery } from "./armani-gallery";
 import { tissotGallery } from "./tissot-gallery";
+import { tommyGallery } from "./tommy-gallery";
 
 /**
  * Brand photo libraries shown on each brand page.
@@ -9,4 +10,5 @@ import { tissotGallery } from "./tissot-gallery";
 export const brandGalleries: Record<string, GalleryItem[]> = {
   tissot: tissotGallery,
   "armani-exchange": armaniGallery,
+  "tommy-hilfiger": tommyGallery,
 };

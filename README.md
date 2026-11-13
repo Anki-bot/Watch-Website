@@ -28,7 +28,7 @@ npm start
   - search across name, collection, reference, brand and description
   - 6 sort options, active-filter chips, mobile filter drawer, pagination
 - **Product pages** (`/watches/[slug]`) — multi-view gallery, full specifications, highlights, quantity, wishlist, stock states, related watches, brand story and Product JSON-LD.
-- **Brand pages** (`/brands`, `/brands/[slug]`) — all 14 maisons with dedicated collection pages.
+- **Brand pages** (`/brands`, `/brands/[slug]`) — all 16 maisons with dedicated collection pages.
 - **Wishlist** (`/wishlist`) — persisted in `localStorage`, move-all-to-bag and clear actions.
 - **Bag** (`/cart`) — slide-over drawer + full cart page, stock-aware quantities, free-shipping progress and order summary.
 - **Checkout** (`/checkout`) — validated demo form, payment mock, delivery and order summary. No real payment is taken.
@@ -56,8 +56,8 @@ components/
   ...                      Gallery, checkout, cart, wishlist views
 lib/
   types.ts                 Domain types
-  watches.ts               46-watch catalogue + helpers
-  brands.ts                14 maisons
+  watches.ts               Watch catalogue + helpers
+  brands.ts                16 maisons
   filters.ts               Filtering, sorting, URL query helpers
   info.ts                  Information page content
   format.ts                Price, cart and small utilities

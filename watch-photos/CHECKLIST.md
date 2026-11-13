@@ -193,6 +193,25 @@ All 80 usable photos are live in the site's photo library, and each model
 family with photos is now a product in the catalog.
 `Le Locle Powermatic 80` and `Seastar 1000` still have no photos.
 
+## Tommy Hilfiger
+
+Brand folder: `incoming/tommoy-hilfiger/` (folder name as delivered)
+
+- [x] **Skeleton Automatic** — Men · price on request
+  `10406`, `10409`, `10415`, `10568`, `10883`
+- [x] **Open Heart Automatic** — Men · price on request
+  `10437`, `10588`, `10870`
+- [x] **Leather Chronograph** — Men · price on request
+  `10648`, `10656`, `10748`
+- [x] **Bracelet Chronograph** — Men · price on request
+  `16362`, `16393`, `16399`, `16402`
+- [x] **Dragon Edition** — Unisex · price on request
+  `30045`
+
+All 16 photos are live in the site's photo library and each model family is a
+product in the catalog. Sources are untouched in `incoming/tommoy-hilfiger/`.
+See `incoming/tommoy-hilfiger/README.md` for the per-photo breakdown.
+
 ## Tudor
 
 Brand folder: `incoming/tudor/`

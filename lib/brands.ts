@@ -151,6 +151,16 @@ export const brands: Brand[] = [
       "Armani Exchange distils the Armani aesthetic into accessible, urban watches. Graphic chronographs, slim leather pieces and confident steel cases — designed in Milan, worn everywhere.",
     accent: "#1b1b1b",
   },
+  {
+    slug: "tommy-hilfiger",
+    name: "Tommy Hilfiger",
+    country: "United States",
+    founded: 1985,
+    tagline: "Classic American, everyday confidence",
+    description:
+      "Tommy Hilfiger brings the ease of American sportswear to the wrist. Open-heart automatics, bold chronographs and two-tone bracelets — recognisable, wearable and built for daily life.",
+    accent: "#0f2f5c",
+  },
 ];
 
 export function getBrand(slug: string): Brand | undefined {
