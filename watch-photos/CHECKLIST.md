@@ -212,6 +212,34 @@ All 16 photos are live in the site's photo library and each model family is a
 product in the catalog. Sources are untouched in `incoming/tommoy-hilfiger/`.
 See `incoming/tommoy-hilfiger/README.md` for the per-photo breakdown.
 
+## Fossil (Women)
+
+Brand folder: `incoming/Fossil-Women/` — 76 photos delivered, 73 used
+
+All seven families are now products in the catalog under the Fossil maison and
+appear on `/women` and `/watches?brand=fossil`. Prices are not confirmed, so
+every piece shows **Price on request** with an enquire link.
+
+- [x] **Round Multifunction** — Women · price on request · 11 photos
+  `11692`, `11700`, `11736`, `11752`, `11760`, `11780`, `14237`, `3141`, `3201`, `3202`, `3203`
+- [x] **Round Bracelet** — Women · price on request · 9 photos
+  `11708`, `11712`, `11732`, `11744`, `11764`, `11778`, `11785`, `29958`, `30042`
+- [x] **Automatic Open Heart** — Women · price on request · 1 photo
+  `11696`
+- [x] **Rectangle Bracelet** — Women · price on request · 10 photos
+  `11704`, `11716`, `11756`, `5937`, `5941`, `5945`, `5961`, `5965`, `5973`, `5979`
+- [x] **Petite Rectangle** — Women · price on request · 16 photos
+  `11788`, `15883`–`15890`, `20054`, `20057`, `20060`, `20063`, `20066`, `20069`, `20072`
+- [x] **Cushion Bracelet** — Women · price on request · 12 photos
+  `14240`, `14243`, `14246`, `14249`, `14252`, `15920`, `15922`, `15924`, `15926`, `15928`, `15930`, `15932`
+- [x] **Leather Multifunction** — Women · price on request · 14 photos
+  `20206`, `20208`, `20210`, `20212`, `20214`, `20216`, `20218`, `20220`, `20222`, `20224`, `20226`, `20228`, `20230`, `20232`
+
+**Excluded:** `1242`, `1246`, `1248` — low-resolution WhatsApp chat screenshots
+(738 × 1600), not usable as product photos.
+
+See `incoming/Fossil-Women/README.md` for the per-photo breakdown.
+
 ## Tudor
 
 Brand folder: `incoming/tudor/`

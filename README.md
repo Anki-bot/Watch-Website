@@ -2,7 +2,7 @@
 
 A complete, production-style watch e-commerce storefront built with **Next.js 16 (App Router)**, **React 19**, **TypeScript** and **Tailwind CSS v4**.
 
-Everything runs locally with no database, API keys or external image services. The 46 watches are rendered as original, configurable SVG illustrations, so the store looks just as good offline.
+Everything runs locally with no database, API keys or external image services. The catalogue holds 72 watches: pieces with real boutique photography use those photos, and every other piece is rendered as an original, configurable SVG illustration, so the store looks just as good offline.
 
 ## Getting started
 
@@ -28,7 +28,8 @@ npm start
   - search across name, collection, reference, brand and description
   - 6 sort options, active-filter chips, mobile filter drawer, pagination
 - **Product pages** (`/watches/[slug]`) — multi-view gallery, full specifications, highlights, quantity, wishlist, stock states, related watches, brand story and Product JSON-LD.
-- **Brand pages** (`/brands`, `/brands/[slug]`) — all 16 maisons with dedicated collection pages.
+- **Brand pages** (`/brands`, `/brands/[slug]`) — all 17 maisons with dedicated collection pages, plus photo libraries for the houses where boutique photography exists.
+- **Women's section** (`/women`) — every women's piece in one editorial page, with maison shortcuts and a link into the filtered catalogue.
 - **Wishlist** (`/wishlist`) — persisted in `localStorage`, move-all-to-bag and clear actions.
 - **Bag** (`/cart`) — slide-over drawer + full cart page, stock-aware quantities, free-shipping progress and order summary.
 - **Checkout** (`/checkout`) — validated demo form, payment mock, delivery and order summary. No real payment is taken.
@@ -43,6 +44,7 @@ app/
   page.tsx                 Homepage
   watches/                 Catalogue + product pages
   brands/                  Maison index + brand pages
+  women/                   Women's collection
   wishlist/  cart/         Saved pieces and bag
   checkout/                Demo checkout + confirmation
   info/[slug]/             Editorial and legal pages
@@ -57,7 +59,7 @@ components/
 lib/
   types.ts                 Domain types
   watches.ts               Watch catalogue + helpers
-  brands.ts                16 maisons
+  brands.ts                17 maisons
   filters.ts               Filtering, sorting, URL query helpers
   info.ts                  Information page content
   format.ts                Price, cart and small utilities
@@ -102,12 +104,30 @@ Set `stock: 0` to show the sold-out state. Set `chrono: true` for chronograph su
 - Colours and fonts: the `@theme` block in `app/globals.css`.
 - Brand information: `lib/brands.ts`.
 
-### Swap the illustrations for photography
+### Adding real photography
 
-`components/watch-visual.tsx` renders every watch from data. To use real photos, replace that component's usage in `product-card.tsx`, `product-gallery.tsx`, `cart-drawer.tsx`, etc. with `next/image` and add remote patterns in `next.config.ts`.
+Pieces with boutique photos just carry an `images` array; everything else falls
+back to the SVG renderer automatically.
+
+1. Optimise the photos into `public/watches/<brand-slug>/<family>/` and
+   `public/watches/<brand-slug>/thumbs/<family>/` (1400 px and 640 px on the
+   long edge, JPEG quality ~80–84).
+2. Generate a gallery data file — see `lib/fossil-gallery.ts`,
+   `lib/tommy-gallery.ts`, `lib/tissot-gallery.ts`. Each item needs `src`,
+   `thumb`, `alt`, `title`, `folder`, `group`, `width` and `height`.
+3. Register it in `lib/brand-galleries.ts` so the brand page shows the photo
+   library and lightbox.
+4. Attach the group to a product in `lib/watches.ts` via the `imagesFrom`
+   helper, e.g. `images: fossilImages("Petite Rectangle")`. The whole family
+   then appears in that product's gallery.
+
+If a piece has no confirmed price yet, set `price: 0` and
+`priceOnRequest: true`. The card shows "Price on request", the product page
+shows an "Enquire about this piece" button linking to `/info/contact`, and the
+piece is excluded from the bag.
 
 ## Notes
 
 - Cart and wishlist are stored client-side in `localStorage`.
 - Checkout is a demonstration: card fields are validated for format but nothing is charged or stored.
-- Studio watch renders are illustrative and generated from product attributes.
+- Studio watch renders are illustrative and generated from product attributes. Pieces with real photography show those photos instead.

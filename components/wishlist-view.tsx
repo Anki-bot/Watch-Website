@@ -8,6 +8,11 @@ import { ProductCard } from "./product-card";
 export function WishlistView() {
   const { hydrated, wishlistItems, wishlist, addToCart, toggleWishlist } = useStore();
 
+  const movable = wishlistItems.filter(
+    (watch) => watch.stock > 0 && !watch.priceOnRequest,
+  );
+  const keptOnEnquiry = wishlist.length - movable.length;
+
   return (
     <section className="shell py-12 lg:py-16">
       <div className="flex flex-col justify-between gap-6 border-b border-line pb-8 sm:flex-row sm:items-end">
@@ -25,28 +30,47 @@ export function WishlistView() {
           </p>
         </div>
         {hydrated && wishlist.length > 0 && (
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => {
-                wishlistItems
-                  .filter((watch) => watch.stock > 0 && !watch.priceOnRequest)
-                  .forEach((watch) => addToCart(watch.slug));
-                wishlist.forEach((slug) => toggleWishlist(slug));
-              }}
-              className="inline-flex items-center gap-2 bg-ink px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-graphite"
-            >
-              <ShoppingBag className="h-3.5 w-3.5" strokeWidth={1.5} />
-              Move all to bag
-            </button>
-            <button
-              type="button"
-              onClick={() => wishlist.forEach((slug) => toggleWishlist(slug))}
-              className="inline-flex items-center gap-2 border border-line px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-stone transition-colors hover:border-ink hover:text-ink"
-            >
-              <Trash2 className="h-3.5 w-3.5" strokeWidth={1.5} />
-              Clear
-            </button>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <div className="flex flex-wrap items-center gap-3">
+              {movable.length > 0 ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    movable.forEach((watch) => addToCart(watch.slug));
+                    movable.forEach((watch) => toggleWishlist(watch.slug));
+                  }}
+                  className="inline-flex items-center gap-2 bg-ink px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-graphite"
+                >
+                  <ShoppingBag className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  {movable.length === wishlist.length
+                    ? "Move all to bag"
+                    : `Move ${movable.length} to bag`}
+                </button>
+              ) : (
+                <Link
+                  href="/info/contact"
+                  className="inline-flex items-center gap-2 bg-ink px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-graphite"
+                >
+                  <ShoppingBag className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  Enquire about these pieces
+                </Link>
+              )}
+              <button
+                type="button"
+                onClick={() => wishlist.forEach((slug) => toggleWishlist(slug))}
+                className="inline-flex items-center gap-2 border border-line px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-stone transition-colors hover:border-ink hover:text-ink"
+              >
+                <Trash2 className="h-3.5 w-3.5" strokeWidth={1.5} />
+                Clear
+              </button>
+            </div>
+            {keptOnEnquiry > 0 && movable.length > 0 && (
+              <p className="text-[11px] text-stone">
+                {keptOnEnquiry === 1
+                  ? "1 price-on-request piece stays saved — enquire with the concierge to order."
+                  : `${keptOnEnquiry} price-on-request pieces stay saved — enquire with the concierge to order.`}
+              </p>
+            )}
           </div>
         )}
       </div>

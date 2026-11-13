@@ -31,7 +31,9 @@ export default function BrandsPage() {
             <span className="text-cream/80">Maisons</span>
           </nav>
           <div className="mt-10 max-w-3xl">
-            <p className="eyebrow text-gold">Fourteen houses, one standard</p>
+            <p className="eyebrow text-gold">
+              {brands.length} houses, one standard
+            </p>
             <h1 className="mt-4 font-display text-5xl leading-[0.95] sm:text-6xl lg:text-7xl">
               The Maisons
             </h1>

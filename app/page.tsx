@@ -92,6 +92,7 @@ export default function HomePage() {
     "tissot",
     "armani-exchange",
     "tommy-hilfiger",
+    "fossil",
   ]
     .map((slug) => brands.find((brand) => brand.slug === slug))
     .filter((brand): brand is NonNullable<typeof brand> => Boolean(brand));

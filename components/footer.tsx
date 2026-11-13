@@ -34,6 +34,7 @@ const columns = [
     title: "The Collection",
     links: [
       { label: "All Watches", href: "/watches" },
+      { label: "Women's Watches", href: "/women" },
       { label: "New Arrivals", href: "/watches?sort=newest" },
       { label: "Best Sellers", href: "/watches?sort=rating" },
       { label: "Under $1,000", href: "/watches?price=500-1000" },

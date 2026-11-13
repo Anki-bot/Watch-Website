@@ -17,6 +17,7 @@ import { cn } from "@/lib/format";
 
 const navLinks = [
   { href: "/watches", label: "Watches" },
+  { href: "/women", label: "Women" },
   { href: "/brands", label: "Brands" },
   { href: "/watches?sort=newest", label: "New Arrivals" },
   { href: "/#story", label: "Our Story" },
@@ -82,6 +83,7 @@ export function Header() {
 
   const isActive = (href: string) => {
     if (href === "/watches") return pathname === "/watches";
+    if (href === "/women") return pathname === "/women";
     if (href === "/brands") return pathname.startsWith("/brands");
     return false;
   };

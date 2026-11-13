@@ -161,6 +161,16 @@ export const brands: Brand[] = [
       "Tommy Hilfiger brings the ease of American sportswear to the wrist. Open-heart automatics, bold chronographs and two-tone bracelets — recognisable, wearable and built for daily life.",
     accent: "#0f2f5c",
   },
+  {
+    slug: "fossil",
+    name: "Fossil",
+    country: "United States",
+    founded: 1984,
+    tagline: "American design, everyday character",
+    description:
+      "Fossil has been making American-designed watches since 1984, with a playful vintage streak. Slim rectangles, cushion cases, crystal-set bezels and gift-ready packaging — designed in Texas, worn everywhere.",
+    accent: "#7a2b2b",
+  },
 ];
 
 export function getBrand(slug: string): Brand | undefined {
